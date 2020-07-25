@@ -27,7 +27,6 @@ const PostForm = ({ addPost }) => {
           placeholder="Create a post"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          name="text"
           required
         ></textarea>
         <input type="submit" className="btn btn-dark my-1" value="Submit" />
@@ -36,6 +35,8 @@ const PostForm = ({ addPost }) => {
   );
 };
 
-PostForm.propTypes = {};
+PostForm.propTypes = {
+  addPost: PropTypes.func.isRequired,
+};
 
 export default connect(null, { addPost })(PostForm);
